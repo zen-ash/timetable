@@ -2,13 +2,6 @@
 
 An interactive web app for university students to build weekly schedules with drag-and-drop class blocks. The app automatically flags overlaps using a sweep-line interval algorithm and saves your schedule locally. Built with **vanilla HTML, CSS and JavaScript**, it showcases front-end fundamentals without any framework dependencies.
 
-## Demo
-
-Once this repository is published on GitHub Pages you can access it via:
-
-https://<your-username>.github.io/timetable
-
-Replace `<your-username>` with your GitHub handle. You can also clone or download this repository and simply open `index.html` in your browser.
 
 ## Features
 
