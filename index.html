@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Timetable Builder</title>
+  <!-- Base styling for typography and layout -->
+  <link rel="stylesheet" href="styles/base.css">
+  <!-- Grid and positioning styles -->
+  <link rel="stylesheet" href="styles/grid.css">
+  <!-- Print-specific tweaks -->
+  <link rel="stylesheet" href="styles/print.css" media="print">
+</head>
+<body>
+  <!-- Top toolbar with actions -->
+  <header class="controls">
+    <h1>Campus Timetable Builder</h1>
+    <div class="toolbar">
+      <button id="addBtn" class="btn">+ Add Class</button>
+      <input type="file" id="importInput" accept="application/json" hidden>
+      <button id="importBtn" class="btn">Import</button>
+      <button id="exportBtn" class="btn">Export</button>
+      <button id="themeBtn" class="btn">Theme</button>
+      <button id="printBtn" class="btn">Print</button>
+    </div>
+  </header>
+
+  <!-- Main grid container; populated via JS -->
+  <main id="grid" class="grid"></main>
+
+  <!-- Modal dialog for adding/editing classes -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <form id="classForm" class="modal-form">
+      <h2 id="modalTitle">Add/Edit Class</h2>
+      <label>
+        Title
+        <input id="titleInput" type="text" required>
+      </label>
+      <label>
+        Day
+        <select id="dayInput">
+          <option value="0">Monday</option>
+          <option value="1">Tuesday</option>
+          <option value="2">Wednesday</option>
+          <option value="3">Thursday</option>
+          <option value="4">Friday</option>
+          <option value="5">Saturday</option>
+          <option value="6">Sunday</option>
+        </select>
+      </label>
+      <label>
+        Start
+        <input id="startInput" type="time" step="900" required>
+      </label>
+      <label>
+        End
+        <input id="endInput" type="time" step="900" required>
+      </label>
+      <label>
+        Location
+        <input id="locationInput" type="text">
+      </label>
+      <label>
+        Color
+        <input id="colorInput" type="color" value="#6aa9ff">
+      </label>
+      <div class="modal-actions">
+        <button type="submit" class="btn">Save</button>
+        <button type="button" id="cancelBtn" class="btn secondary">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Hidden live region for accessibility announcements -->
+  <div id="announcer" class="visually-hidden" aria-live="assertive"></div>
+
+  <!-- Application logic -->
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

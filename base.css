@@ -1,0 +1,190 @@
+/* Base styling for the Campus Timetable Builder */
+
+/* Basic reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Body defaults */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.4;
+  color: #222;
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark theme overrides */
+body.dark {
+  background: #1f2937;
+  color: #f9fafb;
+}
+body.dark .controls {
+  background: #111827;
+  color: #f9fafb;
+}
+body.dark .day-column {
+  background: #1f2937;
+}
+body.dark .day-header {
+  background: #111827;
+  color: #e5e7eb;
+}
+body.dark .btn {
+  background-color: #4c51bf;
+  color: #f9fafb;
+}
+body.dark .btn:hover {
+  background-color: #4338ca;
+}
+body.dark .btn.secondary {
+  background-color: #374151;
+  color: #d1d5db;
+}
+body.dark .btn.secondary:hover {
+  background-color: #4b5563;
+}
+
+/* Headings */
+h1 {
+  font-size: 1.5rem;
+  margin-right: auto;
+}
+
+/* Toolbar */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn {
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #4338ca;
+}
+
+.btn.secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.btn.secondary:hover {
+  background-color: #d1d5db;
+}
+
+/* Grid container; defined further in grid.css */
+.grid {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow: auto;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-form {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  min-width: 300px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-form h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.modal-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  gap: 0.25rem;
+}
+
+.modal-form input,
+.modal-form select {
+  padding: 0.4rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Accessibility helpers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
